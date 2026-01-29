@@ -1,4 +1,3 @@
-import Header from "./components/header"
 import Footer from "./components/footer"
 import Quiz from "./components/quiz";
 import Chat from "./components/chat"
@@ -12,7 +11,8 @@ export default function Home() {
     <div className="flex flex-col h-1/1">
       <ResponsiveAppBar />
       <div className="flex flex-row h-17/20">
-        <Quiz />
+        <Quiz/>
+        <Divider orientation="vertical" />
         <Chat />
       </div>
       <Divider />
