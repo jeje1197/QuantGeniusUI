@@ -24,7 +24,7 @@ function MultipleChoiceSelection({choices}: {choices: any[]}) {
 
 export default function quiz() {
     const currentQuestion = 1;
-    const questionText = 'Question Text';
+    const questionText = 'If f(x) = x^2 - 4x + 3 and g(x) = 2x - 1, what is the value of f(g(3))?';
     const choices = [
         {label: 'A', text: 'Text'},
         {label: 'B', text: 'Text'},
@@ -33,29 +33,33 @@ export default function quiz() {
     ]
 
   return (
-    <Box className='flex flex-col w-8/10'>
-        <div className='align-self-center'>
-            Quiz
-        </div>
-        <div>
-            <Typography variant='h4'>
-                Question {currentQuestion}
-            </Typography>
+    <Box className='flex flex-col w-6/10 ml-70'>
+        <Typography variant='h4' style={{
+            color: 'black',
+            paddingTop: '0.75rem',
+            paddingBottom: '0.75rem'
+        }}>
+            Question {currentQuestion}
+        </Typography>
+        <Divider style={{
+            marginTop: '0rem'
+        }}/>
 
-            <Typography>
-                {questionText}
-            </Typography>
-            
-            <Divider style={{marginBottom: '1rem'}}/>
-            {
-                choices.length ? (
-                    <MultipleChoiceSelection choices={choices}/>
-                ) : (
-                    <TextField id="outlined-basic" label="Outlined" variant="outlined" />
-                )
-            }
-            
-        </div>
+        <Typography variant='p' style={{
+            color: 'black',
+            marginTop: '2rem'
+        }}>
+            {questionText}
+        </Typography>
+        
+        <Divider style={{marginBottom: '1rem'}}/>
+        {
+            choices.length ? (
+                <MultipleChoiceSelection choices={choices}/>
+            ) : (
+                <TextField id="outlined-basic" label="Outlined" variant="outlined" />
+            )
+        }
     </Box>
   )
 }
