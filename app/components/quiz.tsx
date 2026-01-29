@@ -3,7 +3,9 @@ import React from 'react'
 
 function MultipleChoiceSelection({choices}: {choices: any[]}) {
     return (
-        <FormControl style={{paddingLeft: '1rem'}}>
+        <FormControl style={{
+            // paddingLeft: '1rem'
+        }}>
             <FormLabel id="demo-radio-buttons-group-label">
                 Select your answer
             </FormLabel>
@@ -11,11 +13,12 @@ function MultipleChoiceSelection({choices}: {choices: any[]}) {
                 aria-labelledby="demo-radio-buttons-group-label"
                 name="radio-buttons-group"
                 style={{
-                    marginTop: '0.5rem'
+                    marginTop: '0.5rem',
+                    color: 'black'
                 }}
             >
                 {choices?.map(choice => {
-                    return <FormControlLabel value={choice.label} control={<Radio />} label={choice.label} />
+                    return <FormControlLabel value={choice.label} control={<Radio />} label={choice.text} />
                 })}
             </RadioGroup>
         </FormControl>
@@ -26,10 +29,10 @@ export default function quiz() {
     const currentQuestion = 1;
     const questionText = 'If f(x) = x^2 - 4x + 3 and g(x) = 2x - 1, what is the value of f(g(3))?';
     const choices = [
-        {label: 'A', text: 'Text'},
-        {label: 'B', text: 'Text'},
-        {label: 'C', text: 'Text'},
-        {label: 'D', text: 'Text'}
+        {label: 'A', text: '3'},
+        {label: 'B', text: '5'},
+        {label: 'C', text: '8'},
+        {label: 'D', text: '11'}
     ]
 
   return (
@@ -45,14 +48,17 @@ export default function quiz() {
             marginTop: '0rem'
         }}/>
 
-        <Typography variant='p' style={{
-            color: 'black',
-            marginTop: '2rem'
-        }}>
-            {questionText}
-        </Typography>
-        
-        <Divider style={{marginBottom: '1rem'}}/>
+        <Box className="flex flex-col h-1/4 justify-content-center">
+            <Typography style={{
+                color: 'black',
+                marginTop: '2rem'
+            }}>
+                {questionText}
+            </Typography>
+        </Box>
+        <Divider style={{
+            marginBottom: '1rem'
+        }}/>
         {
             choices.length ? (
                 <MultipleChoiceSelection choices={choices}/>
