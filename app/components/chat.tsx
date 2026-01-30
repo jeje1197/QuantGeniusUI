@@ -16,7 +16,7 @@ export default function Chat() {
         </Box>
         
         <Box className="h-1/10 align-self-end" sx={{ width: 500, maxWidth: '100%' }}>
-            <TextField fullWidth label="fullWidth" id="fullWidth" />
+            {/* <TextField fullWidth label="fullWidth" id="fullWidth" /> */}
         </Box>
     </Box>
   )

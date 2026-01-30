@@ -1,8 +1,10 @@
+'use client'
+
 import Footer from "./components/footer"
 import Quiz from "./components/quiz";
 import Chat from "./components/chat"
 import ResponsiveAppBar from "./components/appbar";
-import { Divider } from "@mui/material";
+import { Box, Divider } from "@mui/material";
 
 export default function Home() {
   const title = "Quant Genius";
@@ -10,11 +12,9 @@ export default function Home() {
   return (
     <div className="flex flex-col h-1/1">
       <ResponsiveAppBar />
-      <div className="flex flex-row h-17/20">
+      <Box className="flex flex-row h-17/20 w-1/1 justify-center">
         <Quiz/>
-        <Divider orientation="vertical" />
-        <Chat />
-      </div>
+      </Box>
       <Divider />
       <Footer />
     </div>
