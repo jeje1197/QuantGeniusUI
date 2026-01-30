@@ -87,7 +87,7 @@ export default function quiz() {
                 question?.choices?.length ? (
                     <MultipleChoiceSelection choices={question.choices}/>
                 ) : (
-                    <TextField id="outlined-basic" label="Outlined" variant="outlined" />
+                    <TextField id="outlined-basic" variant="outlined" label="Your answer"/>
                 )
             }
             <Box className="mt-2">
